@@ -1,0 +1,78 @@
+{
+  "name": "retree",
+  "displayName": "reTree",
+  "description": "Create directory structures from ASCII tree markup",
+  "version": "0.0.1",
+  "publisher": "erfannf2",
+  "private": false,
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erfannf2/retree.git"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "directory",
+    "structure",
+    "tree",
+    "filesystem",
+    "generator"
+  ],
+  "activationEvents": [
+    "onCommand:reTree.createFromMarkup",
+    "onCommand:reTree.undoLastCreation"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "reTree.createFromMarkup",
+        "title": "reTree: Create Directory Structure from Markup"
+      },
+      {
+        "command": "reTree.undoLastCreation",
+        "title": "reTree: Undo Last Creation"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceExtname == .md || resourceExtname == .txt",
+          "command": "reTree.createFromMarkup",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "reTree",
+      "properties": {
+        "reTree.overwriteProtection": {
+          "type": "boolean",
+          "default": true,
+          "description": "Prevent overwriting existing files and directories"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/node": "^14.x.x",
+    "@typescript-eslint/eslint-plugin": "^4.x.x",
+    "@typescript-eslint/parser": "^4.x.x",
+    "eslint": "^7.x.x",
+    "typescript": "^4.x.x"
+  }
+}
