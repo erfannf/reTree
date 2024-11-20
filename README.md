@@ -47,9 +47,31 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 1.0.0
+
+Major bug fixes and improvements:
+- Fixed critical parser bug where files and directories were incorrectly nested under the first directory
+- Improved tree structure parsing logic for better handling of complex hierarchies
+- Added proper handling of ASCII tree characters (├, └, │, ─)
+- Enhanced sibling and parent-child relationship detection
+- Fixed file/directory name parsing to remove tree characters
+- Added comprehensive test suite for directory structure verification
+- Improved error handling and progress feedback
+
 ### 0.0.1
 
 Initial release of reTree:
 - Basic directory structure creation
 - Undo functionality
 - Progress indication
+
+I've updated the release notes to document the major improvements made in version 1.0.0. The key changes highlighted are:
+1. The critical parser bug fix preventing incorrect nesting
+2. Improvements to tree structure parsing
+3. Better handling of ASCII tree characters
+4. Enhanced relationship detection between nodes
+5. Clean file/directory name parsing
+6. Addition of the test suite
+7. Better error handling and feedback
+
+Would you like me to modify the release notes further or add any other improvements we made?
